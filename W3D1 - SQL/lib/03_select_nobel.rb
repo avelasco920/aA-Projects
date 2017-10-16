@@ -87,11 +87,11 @@ def presidential_prizes
   # 'Woodrow Wilson', 'Jimmy Carter')
   execute(<<-SQL)
   SELECT
-    yr, subject, winner
+    *
   FROM
     nobels
   WHERE
-    subject = 'presidential'
+    winner IN ('Theodore Roosevelt', 'Woodrow Wilson', 'Jimmy Carter');
   SQL
 end
 
@@ -103,6 +103,6 @@ def nobel_johns
   FROM
     nobels
   WHERE
-    winner LIKE '%John%'
+    winner LIKE 'John%'
   SQL
 end
