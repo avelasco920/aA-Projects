@@ -36,12 +36,24 @@ end
 def films_from_sixty_two
   # List the films where the yr is 1962 [Show id, title]
   execute(<<-SQL)
+    SELECT
+      id, title
+    FROM
+      movies
+    WHERE
+      yr = 1962
   SQL
 end
 
 def year_of_kane
   # Give year of 'Citizen Kane'.
   execute(<<-SQL)
+    SELECT
+      yr
+    FROM
+      movies
+    WHERE
+      title = 'Citizen Kane'
   SQL
 end
 
