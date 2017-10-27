@@ -9,6 +9,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+      <%= logged_in? ? current_user.email : "" %>
+      <% if logged_in? %>
+        <%= button_to "Logout", sessions_url, method: :delete %>
+      <% else %>
+        <%= button_to "Login", new_sessions_url, method: :get %>
+      <% end %>
+    </nav>
+
+    <header>
+      <h1>Music App</h1>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
   </body>
+
+  <footer>footer</footer>
 </html>

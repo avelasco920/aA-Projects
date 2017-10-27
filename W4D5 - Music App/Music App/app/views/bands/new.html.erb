@@ -1,0 +1,16 @@
+<h2>Add a New Band</h2>
+<form action="<%= bands_url %>" method="post">
+  <label for="band_name"><strong>Name</strong></label>
+  <input class="band_name" type="text" name="band[name]">
+  <br><br>
+
+  <strong>Recording Style</strong>
+  <br>
+  <label for="recording_style">live</label>
+  <input type="radio" name="band[recording_style]" value="live">
+  <label for="recording_style">studio</label>
+  <input type="radio" name="band[recording_style]" value="studio">
+  <br>
+  <br>
+  <input type="submit" value="Submit">
+</form>
