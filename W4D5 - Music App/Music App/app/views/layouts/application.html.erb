@@ -10,7 +10,9 @@
 
   <body>
     <nav>
-      <%= logged_in? ? current_user.email : "" %>
+      <% if logged_in? %>
+        <a href="<%= user_url(current_user.id) %>"><%= current_user.email %></a>
+      <% end %>
       <% if logged_in? %>
         <%= button_to "Logout", sessions_url, method: :delete %>
       <% else %>
@@ -19,7 +21,7 @@
     </nav>
 
     <header>
-      <h1>Music App</h1>
+      <h1><a href="<%= bands_url %>">Music App</a></h1>
     </header>
 
     <main>

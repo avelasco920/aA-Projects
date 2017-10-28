@@ -1,0 +1,8 @@
+<h2>Edit Band</h2>
+<form action="<%= bands_url %>" method="patch">
+  <label for="band_name"><strong>Name</strong></label>
+  <input class="band_name" type="text" name="band[name]" value="<%= @band.name %>">
+  <br>
+  <br>
+  <input type="submit" value="Update">
+</form>

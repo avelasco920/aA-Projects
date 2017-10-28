@@ -1,0 +1,7 @@
+<h3><%= @band.name %></h3>
+  <% @band.albums.each do |album| %>
+    <%= album %>
+    <% album.each do |track| %>
+      <%= track.title %>
+    <% end %>
+  <% end %>
