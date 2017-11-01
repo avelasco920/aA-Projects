@@ -14,15 +14,20 @@
         <a href="<%= user_url(current_user.id) %>"><%= current_user.email %></a>
       <% end %>
       <% if logged_in? %>
-        <%= button_to "Logout", sessions_url, method: :delete %>
+        <%= button_to "Logout", session_url, method: :delete %>
       <% else %>
-        <%= button_to "Login", new_sessions_url, method: :get %>
+        <%= button_to "Login", new_session_url, method: :get %>
+        <%= button_to "Signup", new_user_url , method: :get %>
       <% end %>
     </nav>
 
     <header>
       <h1><a href="<%= bands_url %>">Music App</a></h1>
     </header>
+
+    <% flash[:errors].try(:each) do |err| %>
+      <%= err %>
+    <% end %>
 
     <main>
       <%= yield %>

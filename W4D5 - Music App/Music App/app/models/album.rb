@@ -15,7 +15,7 @@ class Album < ApplicationRecord
   validates :title, presence: true
   validates :year, presence: true
   validates :band_id, presence: true, uniqueness: true
-  validates :recording_style, presence: true
+  validates :recording_style, presence: true, inclusion: { in: %w(studio live) }
   belongs_to :band
   has_many :tracks
 end

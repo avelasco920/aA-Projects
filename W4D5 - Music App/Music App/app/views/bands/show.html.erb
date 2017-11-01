@@ -1,7 +1,10 @@
 <h3><%= @band.name %></h3>
-  <% @band.albums.each do |album| %>
-    <%= album %>
-    <% album.each do |track| %>
-      <%= track.title %>
-    <% end %>
+
+<%= button_to "Add Album", new_album_url, method: :get %>
+
+<% @band.albums.each do |album| %>
+  <%= album %>
+  <% album.each do |track| %>
+    <%= track.title %>
   <% end %>
+<% end %>

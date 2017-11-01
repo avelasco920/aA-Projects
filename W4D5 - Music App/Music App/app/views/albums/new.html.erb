@@ -1,10 +1,34 @@
 <h2>Add a New Album</h2>
-
-
-<br><br>
-<strong>Recording Style</strong>
 <br>
-<label for="recording_style">live</label>
-<input type="radio" name="band[recording_style]" value="live">
-<label for="recording_style">studio</label>
-<input type="radio" name="band[recording_style]" value="studio">
+<form action="<%= albums_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>Album Title
+    <input type="text" name="album[title]" value=" <%= @album.title %>">
+  </label>
+
+  <br> <br>
+
+  <label>Year
+    <input type="integer" name="album[year]" value=" <%= @album.year %>">
+  </label>
+
+  <br> <br>
+
+  <label>Band ID
+    <input type="integer" name="album[band_id]" value=" <%= @album.band_id %>">
+  </label>
+
+  <br><br>
+  <strong>Recording Style</strong>
+  <br>
+  <label for="recording_style">live</label>
+  <input type="radio" name="album[recording_style]" value="live">
+  <label for="recording_style">studio</label>
+  <input type="radio" name="album[recording_style]" value="studio">
+
+  <br><br>
+
+  <input type="submit" value="Create New Album">
+
+</form>
