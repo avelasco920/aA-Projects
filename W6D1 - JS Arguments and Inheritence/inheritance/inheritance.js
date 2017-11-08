@@ -18,7 +18,7 @@ const Asteroid = function Asteroid() {
 
 Function.prototype.inherits = function inherits(superClass) {
   function Surrogate() {}
-  Surrogate.prototype = superClass.prototype;
+  superClass.prototype = Surrogate.prototype;
   this.prototype = new Surrogate();
   this.prototype.constructor = this;
 };
